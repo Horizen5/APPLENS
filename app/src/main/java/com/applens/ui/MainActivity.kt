@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home -> { switchFragment("home"); true }
                 R.id.nav_apps -> { switchFragment("apps"); true }
                 R.id.nav_hooks -> { switchFragment("hooks"); true }
+                R.id.nav_about -> { switchFragment("about"); true }
                 else -> false
             }
         }
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
             "home" -> HomeFragment()
             "apps" -> AppsFragment()
             "hooks" -> HooksFragment()
+            "about" -> AboutFragment()
             else -> return
         }
 

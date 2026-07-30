@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- HyperOS 明亮风格配色 -->
+    <!-- ====== LSPosed / MIUI X 风格配色 ====== -->
+    <color name="lsp_bg">#FFF5F5F5</color>
+    <color name="lsp_bg_alt">#FFF8F9FA</color>
+    <color name="lsp_card">#FFFFFFFF</color>
+    <color name="lsp_status_green_bg">#FFE8F5E9</color>
+    <color name="lsp_status_yellow_bg">#FFFFF8E1</color>
+    <color name="lsp_text_primary">#FF1A1A1A</color>
+    <color name="lsp_text_secondary">#FF666666</color>
+    <color name="lsp_text_tertiary">#FF999999</color>
+    <color name="lsp_divider">#FFEEEEEE</color>
+    <color name="lsp_green">#FF34C759</color>
+    <color name="lsp_yellow">#FFFFB300</color>
+    <color name="lsp_black">#FF000000</color>
+
+    <!-- ====== HyperOS 明亮风格配色（保留兼容） ====== -->
     <color name="hyper_bg">#FFF5F5F7</color>
     <color name="hyper_bg_card">#FFFFFFFF</color>
     <color name="hyper_bg_card_pressed">#FFF0F1F5</color>

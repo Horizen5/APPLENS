@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/hyper_bg">
+    android:background="@color/lsp_bg">
 
     <!-- Fragment 容器 -->
     <FrameLayout
@@ -21,10 +21,12 @@
         android:id="@+id/bottom_nav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/hyper_bg_card"
+        android:background="@color/lsp_card"
         android:elevation="8dp"
-        app:itemIconTint="@color/hyper_accent"
-        app:itemTextColor="@color/hyper_text_secondary"
+        app:itemActiveIndicatorStyle="@null"
+        app:itemBackground="@drawable/bg_nav_item"
+        app:itemIconTint="@color/lsp_nav_text"
+        app:itemTextColor="@color/lsp_nav_text"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
