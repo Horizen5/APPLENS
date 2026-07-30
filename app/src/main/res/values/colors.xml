@@ -56,4 +56,7 @@
 
     <!-- 进度 -->
     <color name="hyper_progress_bg">#FFE5E6EB</color>
+    
+    <!-- 底部导航选中背景 -->
+    <color name="hyper_accent_light">#FFE8F0FF</color>
 </resources>
