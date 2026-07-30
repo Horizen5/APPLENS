@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- HyperOS 风格主题：深色 + 圆角 + 渐变 -->
-    <style name="Theme.ActivityScanner" parent="Theme.Material3.Dark.NoActionBar">
+    <!-- HyperOS / KernelSU 明亮风格主题 -->
+    <style name="Theme.ActivityScanner" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/hyper_accent</item>
         <item name="colorPrimaryVariant">@color/hyper_accent_secondary</item>
         <item name="colorOnPrimary">@android:color/white</item>
@@ -11,9 +11,8 @@
         <item name="android:windowBackground">@color/hyper_bg</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/hyper_bg</item>
     </style>
 
     <!-- 卡片 -->
@@ -58,7 +57,7 @@
     <!-- 次级按钮 -->
     <style name="HyperButtonSecondary" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:background">@drawable/bg_button_outline</item>
-        <item name="android:textColor">@color/hyper_text_primary</item>
+        <item name="android:textColor">@color/hyper_accent</item>
         <item name="android:textSize">14sp</item>
         <item name="strokeColor">@color/hyper_divider</item>
         <item name="strokeWidth">1dp</item>

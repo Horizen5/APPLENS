@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- HyperOS / 西米露 风格配色 -->
-    <color name="hyper_bg">#FF0B0F19</color>
-    <color name="hyper_bg_card">#FF161B2C</color>
-    <color name="hyper_bg_card_pressed">#FF1F2540</color>
-    <color name="hyper_divider">#FF232A41</color>
+    <!-- HyperOS / KernelSU 明亮风格配色 -->
+    <color name="hyper_bg">#FFF5F6FA</color>
+    <color name="hyper_bg_card">#FFFFFFFF</color>
+    <color name="hyper_bg_card_pressed">#FFF0F1F5</color>
+    <color name="hyper_divider">#FFE5E6EB</color>
 
-    <color name="hyper_text_primary">#FFFFFFFF</color>
-    <color name="hyper_text_secondary">#B3FFFFFF</color>
-    <color name="hyper_text_tertiary">#80FFFFFF</color>
+    <color name="hyper_text_primary">#FF1D2129</color>
+    <color name="hyper_text_secondary">#FF4E5969</color>
+    <color name="hyper_text_tertiary">#FF86909C</color>
 
-    <!-- 主色调：HyperOS 橙 + 蓝紫渐变 -->
-    <color name="hyper_accent">#FFFF6B3D</color>
-    <color name="hyper_accent_secondary">#FF6E5BFF</color>
-    <color name="hyper_accent_grad_start">#FFFF6B3D</color>
-    <color name="hyper_accent_grad_end">#FF6E5BFF</color>
+    <!-- 主色调：HyperOS 蓝 -->
+    <color name="hyper_accent">#FF0066FF</color>
+    <color name="hyper_accent_secondary">#FF4D7CFF</color>
+    <color name="hyper_accent_grad_start">#FF0066FF</color>
+    <color name="hyper_accent_grad_end">#FF4D7CFF</color>
 
-    <color name="hyper_green">#FF4CD964</color>
-    <color name="hyper_yellow">#FFFFCC00</color>
-    <color name="hyper_red">#FFFF3B30</color>
-    <color name="hyper_blue">#FF007AFF</color>
+    <color name="hyper_green">#FF00B42A</color>
+    <color name="hyper_yellow">#FFFF9F1F</color>
+    <color name="hyper_red">#FFF53F3F</color>
+    <color name="hyper_blue">#FF0066FF</color>
 
-    <color name="hyper_chip_bg">#33FFFFFF</color>
-    <color name="hyper_chip_text">#FFFFFFFF</color>
+    <color name="hyper_chip_bg">#FFF2F3F5</color>
+    <color name="hyper_chip_text">#FF4E5969</color>
 
-    <color name="hyper_progress_bg">#33FFFFFF</color>
+    <color name="hyper_progress_bg">#FFE5E6EB</color>
 </resources>
