@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- HyperOS 主按钮渐变背景 -->
+<!-- HyperOS 主按钮：蓝 → 紫 渐变 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <gradient
         android:angle="0"
         android:startColor="@color/hyper_accent_grad_start"
-        android:endColor="@color/hyper_accent_grad_end" />
-    <corners android:radius="24dp" />
+        android:centerColor="@color/hyper_accent_grad_center"
+        android:endColor="@color/hyper_accent_grad_end"
+        android:type="linear" />
+    <corners android:radius="26dp" />
 </shape>

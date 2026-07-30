@@ -1,28 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- HyperOS / KernelSU 明亮风格配色 -->
-    <color name="hyper_bg">#FFF5F6FA</color>
+    <!-- HyperOS 明亮风格配色 -->
+    <color name="hyper_bg">#FFF5F5F7</color>
     <color name="hyper_bg_card">#FFFFFFFF</color>
     <color name="hyper_bg_card_pressed">#FFF0F1F5</color>
-    <color name="hyper_divider">#FFE5E6EB</color>
+    <color name="hyper_bg_secondary">#FFFAFBFC</color>
+    <color name="hyper_divider">#FFEDEEF2</color>
 
     <color name="hyper_text_primary">#FF1D2129</color>
     <color name="hyper_text_secondary">#FF4E5969</color>
     <color name="hyper_text_tertiary">#FF86909C</color>
+    <color name="hyper_text_white">#FFFFFFFF</color>
 
-    <!-- 主色调：HyperOS 蓝 -->
-    <color name="hyper_accent">#FF0066FF</color>
-    <color name="hyper_accent_secondary">#FF4D7CFF</color>
-    <color name="hyper_accent_grad_start">#FF0066FF</color>
-    <color name="hyper_accent_grad_end">#FF4D7CFF</color>
+    <!-- 主色调：HyperOS 蓝紫渐变 -->
+    <color name="hyper_accent">#FF5B8CFF</color>
+    <color name="hyper_accent_secondary">#FF987BFF</color>
+    <color name="hyper_accent_tertiary">#FF6B8DFF</color>
+    <color name="hyper_accent_grad_start">#FF5B8CFF</color>
+    <color name="hyper_accent_grad_center">#FF7A89FF</color>
+    <color name="hyper_accent_grad_end">#FF987BFF</color>
 
-    <color name="hyper_green">#FF00B42A</color>
-    <color name="hyper_yellow">#FFFF9F1F</color>
-    <color name="hyper_red">#FFF53F3F</color>
-    <color name="hyper_blue">#FF0066FF</color>
+    <!-- 状态色 -->
+    <color name="hyper_green">#FF34C759</color>
+    <color name="hyper_yellow">#FFFF9500</color>
+    <color name="hyper_red">#FFFF3B30</color>
+    <color name="hyper_blue">#FF5B8CFF</color>
+    <color name="hyper_orange">#FFFF643D</color>
 
+    <!-- Chip / Tag -->
     <color name="hyper_chip_bg">#FFF2F3F5</color>
     <color name="hyper_chip_text">#FF4E5969</color>
+    <color name="hyper_chip_blue_bg">#FFEAF1FF</color>
+    <color name="hyper_chip_blue_text">#FF5B8CFF</color>
+    <color name="hyper_chip_green_bg">#FFE6FFEC</color>
+    <color name="hyper_chip_green_text">#FF34C759</color>
+    <color name="hyper_chip_orange_bg">#FFFFF0E5</color>
+    <color name="hyper_chip_orange_text">#FFFF9500</color>
+    <color name="hyper_chip_red_bg">#FFFFE5E5</color>
+    <color name="hyper_chip_red_text">#FFFF3B30</color>
 
+    <!-- 进度 -->
     <color name="hyper_progress_bg">#FFE5E6EB</color>
 </resources>
