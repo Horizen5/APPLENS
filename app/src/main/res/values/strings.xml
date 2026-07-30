@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">APPLENS</string>
+    <string name="app_desc">通过 Root/ADB 分析应用 Activity 占用，提供 Hook 管理</string>
+
+    <!-- 主页 -->
+    <string name="menu_home">首页</string>
+    <string name="menu_apps">应用</string>
+    <string name="menu_hooks">Hook 管理</string>
+    <string name="menu_about">关于</string>
+
+    <string name="action_scan">开始扫描</string>
+    <string name="action_select_app">选择应用</string>
+    <string name="action_grant_root">授予 Root</string>
+    <string name="action_grant_usage">授予使用情况访问</string>
+    <string name="action_grant_overlay">授予悬浮窗</string>
+
+    <string name="status_root_ok">Root 权限：已获得</string>
+    <string name="status_root_no">Root 权限：未获得（降级 Shell 模式）</string>
+    <string name="status_usage_ok">使用情况访问：已授权</string>
+    <string name="status_usage_no">使用情况访问：未授权</string>
+    <string name="status_overlay_ok">悬浮窗权限：已授权</string>
+    <string name="status_overlay_no">悬浮窗权限：未授权</string>
+
+    <!-- 应用列表 -->
+    <string name="hint_search_app">搜索应用名 / 包名</string>
+    <string name="filter_user_apps">仅第三方</string>
+    <string name="filter_all_apps">全部</string>
+    <string name="filter_system_apps">仅系统</string>
+
+    <!-- 采样 -->
+    <string name="sampling_title">采样进行中</string>
+    <string name="sampling_desc">正在采集 %1$s 的前台 Activity…</string>
+    <string name="sampling_progress">已完成 %1$d / %2$d</string>
+    <string name="sampling_current">当前 Activity: %1$s</string>
+    <string name="sampling_done">采样完成</string>
+
+    <!-- 结果 -->
+    <string name="result_top_activity">占用最高的 Activity</string>
+    <string name="result_all_activities">所有采样到的 Activity</string>
+    <string name="result_duration">采样时长</string>
+    <string name="result_samples">采样次数</string>
+    <string name="result_unknown_use">作用：未知</string>
+    <string name="result_suggest_hook">建议：可考虑 Hook / 禁用</string>
+    <string name="result_keep">建议：保留</string>
+
+    <!-- Hook -->
+    <string name="hook_disable">禁用 Activity</string>
+    <string name="hook_enable">启用 Activity</string>
+    <string name="hook_block">采样期阻止</string>
+    <string name="hook_tag">标记为待 Hook</string>
+    <string name="hook_empty">还没有 Hook 规则，去采样后添加吧</string>
+    <string name="hook_apply">执行</string>
+    <string name="hook_revert">撤销</string>
+    <string name="hook_remove">移除</string>
+
+    <!-- 关于 -->
+    <string name="about_version">版本 %1$s</string>
+    <string name="about_disclaimer">本工具仅供学习研究使用，禁用应用 Activity 可能导致应用崩溃或功能异常，请谨慎操作。</string>
+</resources>

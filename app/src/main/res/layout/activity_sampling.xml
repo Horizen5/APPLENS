@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hyper_bg"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/hyper_bg"
+        app:titleTextColor="@color/hyper_text_primary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 应用信息 -->
+        <LinearLayout style="@style/HyperCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_app_name"
+                style="@style/HyperTextTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText"
+                tools:text="应用名" />
+
+            <TextView
+                android:id="@+id/tv_package"
+                style="@style/HyperTextCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                tools:text="com.example.app" />
+        </LinearLayout>
+
+        <!-- 进度 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:id="@+id/tv_hint"
+                style="@style/HyperTextBody"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击下方按钮开始 10 秒采样" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="16dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/bg_progress" />
+
+            <TextView
+                android:id="@+id/tv_progress"
+                style="@style/HyperTextCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="0 / 0" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            style="@style/HyperButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_scan"
+            app:icon="@android:drawable/ic_media_play"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp" />
+    </LinearLayout>
+</LinearLayout>

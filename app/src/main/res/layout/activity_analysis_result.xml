@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hyper_bg"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/hyper_bg"
+        app:titleTextColor="@color/hyper_text_primary" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Top Activity 卡片 -->
+            <LinearLayout style="@style/HyperCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/HyperTextCaption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/result_top_activity" />
+
+                <TextView
+                    android:id="@+id/tv_top_activity_name"
+                    style="@style/HyperTextTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/hyper_accent"
+                    tools:ignore="HardcodedText"
+                    tools:text="com.foo/.MainActivity" />
+
+                <TextView
+                    android:id="@+id/tv_top_activity_desc"
+                    style="@style/HyperTextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    tools:text="出现 8 次 / 占比 80.0% / CPU 5.2%" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/hyper_divider" />
+
+                <TextView
+                    android:id="@+id/tv_activity_role"
+                    style="@style/HyperTextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/result_unknown_use" />
+
+                <TextView
+                    android:id="@+id/tv_suggestion"
+                    style="@style/HyperTextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/hyper_yellow"
+                    tools:text="@string/result_suggest_hook" />
+            </LinearLayout>
+
+            <!-- 概览 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout style="@style/HyperCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/HyperTextCaption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/result_samples" />
+
+                    <TextView
+                        android:id="@+id/tv_sample_count"
+                        style="@style/HyperTextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        tools:text="20" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/HyperCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/HyperTextCaption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/result_duration" />
+
+                    <TextView
+                        android:id="@+id/tv_duration"
+                        style="@style/HyperTextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        tools:text="10s" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 所有 Activity -->
+            <TextView
+                style="@style/HyperTextTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/result_all_activities" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

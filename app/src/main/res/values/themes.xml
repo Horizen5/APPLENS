@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- HyperOS 风格主题：深色 + 圆角 + 渐变 -->
+    <style name="Theme.ActivityScanner" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/hyper_accent</item>
+        <item name="colorPrimaryVariant">@color/hyper_accent_secondary</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/hyper_accent_secondary</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:windowBackground">@color/hyper_bg</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/hyper_bg</item>
+    </style>
+
+    <!-- 卡片 -->
+    <style name="HyperCard">
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <!-- 标题文字 -->
+    <style name="HyperTextTitle">
+        <item name="android:textColor">@color/hyper_text_primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HyperTextBody">
+        <item name="android:textColor">@color/hyper_text_secondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="HyperTextCaption">
+        <item name="android:textColor">@color/hyper_text_tertiary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 主按钮（渐变） -->
+    <style name="HyperButtonPrimary" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/bg_button_gradient</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <!-- 次级按钮 -->
+    <style name="HyperButtonSecondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:background">@drawable/bg_button_outline</item>
+        <item name="android:textColor">@color/hyper_text_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="strokeColor">@color/hyper_divider</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <!-- Chip -->
+    <style name="HyperChip" parent="Widget.Material3.Chip.Assist">
+        <item name="android:textColor">@color/hyper_chip_text</item>
+        <item name="chipBackgroundColor">@color/hyper_chip_bg</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

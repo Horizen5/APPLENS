@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/HyperCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_activity"
+                style="@style/HyperTextTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText"
+                tools:text="com.foo/.AdActivity" />
+
+            <TextView
+                android:id="@+id/tv_package"
+                style="@style/HyperTextCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="com.foo" />
+        </LinearLayout>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/tv_action"
+            style="@style/HyperChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="禁用" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_apply"
+            style="@style/HyperButtonSecondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/hook_apply" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_revert"
+            style="@style/HyperButtonSecondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/hook_revert" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_remove"
+            style="@style/HyperButtonSecondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/hook_remove" />
+    </LinearLayout>
+</LinearLayout>

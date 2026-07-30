@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- HyperOS / 西米露 风格配色 -->
+    <color name="hyper_bg">#FF0B0F19</color>
+    <color name="hyper_bg_card">#FF161B2C</color>
+    <color name="hyper_bg_card_pressed">#FF1F2540</color>
+    <color name="hyper_divider">#FF232A41</color>
+
+    <color name="hyper_text_primary">#FFFFFFFF</color>
+    <color name="hyper_text_secondary">#B3FFFFFF</color>
+    <color name="hyper_text_tertiary">#80FFFFFF</color>
+
+    <!-- 主色调：HyperOS 橙 + 蓝紫渐变 -->
+    <color name="hyper_accent">#FFFF6B3D</color>
+    <color name="hyper_accent_secondary">#FF6E5BFF</color>
+    <color name="hyper_accent_grad_start">#FFFF6B3D</color>
+    <color name="hyper_accent_grad_end">#FF6E5BFF</color>
+
+    <color name="hyper_green">#FF4CD964</color>
+    <color name="hyper_yellow">#FFFFCC00</color>
+    <color name="hyper_red">#FFFF3B30</color>
+    <color name="hyper_blue">#FF007AFF</color>
+
+    <color name="hyper_chip_bg">#33FFFFFF</color>
+    <color name="hyper_chip_text">#FFFFFFFF</color>
+
+    <color name="hyper_progress_bg">#33FFFFFF</color>
+</resources>
