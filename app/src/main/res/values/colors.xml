@@ -11,6 +11,7 @@
     <color name="lsp_text_tertiary">#FF999999</color>
     <color name="lsp_divider">#FFEEEEEE</color>
     <color name="lsp_green">#FF34C759</color>
+    <color name="lsp_red">#FFFF3B30</color>
     <color name="lsp_yellow">#FFFFB300</color>
     <color name="lsp_black">#FF000000</color>
 

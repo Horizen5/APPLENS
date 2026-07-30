@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 渐变背景 -->
+    <path
+        android:fillColor="#5B8CFF"
+        android:pathData="M0,0h108v108h-108z" />
+    <path
+        android:fillColor="#7A89FF"
+        android:pathData="M0,54 Q54,54 108,54 L108,108 L0,108 Z" />
+    
+    <!-- 白色前景图形：简洁的放大镜 + A 融合图标 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,38 Q34,28 44,28 L64,28 Q74,28 74,38 L74,68 Q74,78 64,78 L44,78 Q34,78 34,68 Z"
+        android:alpha="0.15" />
+    
+    <!-- 主字母 A 形状 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,32 Q56,32 58,33 L74,73 Q75,75 73,77 L66,77 Q64,77 63,75 L60,67 L48,67 L45,75 Q44,77 42,77 L35,77 Q33,75 34,73 L50,33 Q52,32 54,32 Z M51,59 L57,59 L54,50 Z" />
+    
+    <!-- 放大镜圆环点缀 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M76,60 Q76,54 82,54 Q88,54 88,60 Q88,66 82,66 Q76,66 76,60 Z"
+        android:alpha="0.8" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M86,64 L94,72 Q96,74 94,76 Q92,78 90,76 L82,68 Z"
+        android:alpha="0.8" />
+</vector>

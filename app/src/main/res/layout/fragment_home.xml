@@ -64,6 +64,7 @@
                     android:ellipsize="end" />
 
                 <TextView
+                    android:id="@+id/tv_status_desc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -73,10 +74,10 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/iv_status_icon"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@android:drawable/checkbox_on_background"
-                app:tint="@color/lsp_green" />
+                android:src="@drawable/ic_check_green" />
         </LinearLayout>
 
         <!-- 权限列表卡片 -->
@@ -119,13 +120,10 @@
 
                 <ImageView
                     android:id="@+id/iv_root_icon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_marginEnd="8dp"
-                    android:src="@android:drawable/checkbox_on_background"
-                    android:visibility="gone"
-                    tools:tint="@color/lsp_green"
-                    tools:visibility="visible" />
+                    android:src="@drawable/ic_cross_red" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_grant_root"
@@ -172,13 +170,10 @@
 
                 <ImageView
                     android:id="@+id/iv_usage_icon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_marginEnd="8dp"
-                    android:src="@android:drawable/checkbox_on_background"
-                    android:visibility="gone"
-                    tools:tint="@color/lsp_green"
-                    tools:visibility="visible" />
+                    android:src="@drawable/ic_cross_red" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_grant_usage"
@@ -225,13 +220,10 @@
 
                 <ImageView
                     android:id="@+id/iv_overlay_icon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_marginEnd="8dp"
-                    android:src="@android:drawable/checkbox_on_background"
-                    android:visibility="gone"
-                    tools:tint="@color/lsp_green"
-                    tools:visibility="visible" />
+                    android:src="@drawable/ic_cross_red" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_grant_overlay"

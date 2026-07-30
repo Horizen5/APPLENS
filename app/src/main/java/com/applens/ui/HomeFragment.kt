@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.applens.R
 import com.applens.databinding.FragmentHomeBinding
@@ -46,27 +45,38 @@ class HomeFragment : Fragment() {
 
         // Root 状态
         binding.tvRootStatus.text = if (hasRoot) getString(R.string.status_root_ok) else getString(R.string.status_root_no)
-        binding.ivRootIcon.isVisible = hasRoot
-        binding.ivRootIcon.setColorFilter(ContextCompat.getColor(ctx, R.color.lsp_green))
-        binding.btnGrantRoot.isVisible = !hasRoot
+        binding.ivRootIcon.setImageResource(
+            if (hasRoot) R.drawable.ic_check_green else R.drawable.ic_cross_red
+        )
+        binding.btnGrantRoot.visibility = if (hasRoot) View.GONE else View.VISIBLE
 
         // 使用情况访问权限
         binding.tvUsageStatus.text = if (hasUsage) getString(R.string.status_usage_ok) else getString(R.string.status_usage_no)
-        binding.ivUsageIcon.isVisible = hasUsage
-        binding.ivUsageIcon.setColorFilter(ContextCompat.getColor(ctx, R.color.lsp_green))
-        binding.btnGrantUsage.isVisible = !hasUsage
+        binding.ivUsageIcon.setImageResource(
+            if (hasUsage) R.drawable.ic_check_green else R.drawable.ic_cross_red
+        )
+        binding.btnGrantUsage.visibility = if (hasUsage) View.GONE else View.VISIBLE
 
         // 悬浮窗权限
         binding.tvOverlayStatus.text = if (hasOverlay) getString(R.string.status_overlay_ok) else getString(R.string.status_overlay_no)
-        binding.ivOverlayIcon.isVisible = hasOverlay
-        binding.ivOverlayIcon.setColorFilter(ContextCompat.getColor(ctx, R.color.lsp_green))
-        binding.btnGrantOverlay.isVisible = !hasOverlay
-
-        // 状态卡片背景
-        val allOk = hasRoot && hasUsage && hasOverlay
-        binding.statusCard.setBackgroundResource(
-            if (allOk) R.drawable.bg_status_green else R.drawable.bg_status_yellow
+        binding.ivOverlayIcon.setImageResource(
+            if (hasOverlay) R.drawable.ic_check_green else R.drawable.ic_cross_red
         )
+        binding.btnGrantOverlay.visibility = if (hasOverlay) View.GONE else View.VISIBLE
+
+        // 状态卡片
+        val allOk = hasRoot && hasUsage && hasOverlay
+        if (allOk) {
+            binding.statusCard.setBackgroundResource(R.drawable.bg_status_green)
+            binding.ivStatusIcon.setImageResource(R.drawable.ic_check_green)
+            binding.tvStatusDesc.text = getString(R.string.status_all_ok)
+            binding.tvStatusDesc.setTextColor(ContextCompat.getColor(ctx, R.color.lsp_green))
+        } else {
+            binding.statusCard.setBackgroundResource(R.drawable.bg_status_yellow)
+            binding.ivStatusIcon.setImageResource(R.drawable.ic_cross_red)
+            binding.tvStatusDesc.text = getString(R.string.status_partial)
+            binding.tvStatusDesc.setTextColor(ContextCompat.getColor(ctx, R.color.lsp_red))
+        }
     }
 
     private fun bindActions() {

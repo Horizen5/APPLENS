@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+    
+    <!-- 圆形渐变背景 -->
     <path
-        android:fillColor="#2196F3"
-        android:pathData="M54,30 L78,42 L78,66 L54,78 L30,66 L30,42 Z" />
+        android:pathData="M54,0 A54,54 0 1,1 54,108 A54,54 0 1,1 54,0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:angle="135"
+                android:startColor="#5B8CFF"
+                android:centerColor="#7A89FF"
+                android:endColor="#987BFF" />
+        </aapt:attr>
+    </path>
+    
+    <!-- 白色前景：APP 分析图标 (A 字母 + 放大镜) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M54,40 L66,46 L66,58 L54,64 L42,58 L42,46 Z" />
+        android:pathData="M44,36 L58,36 L72,76 L63,76 L60,68 L42,68 L39,76 L30,76 Z M46,60 L56,60 L51,45 Z" />
+    
+    <!-- 放大镜圆环 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M74,50 Q74,44 80,44 Q86,44 86,50 Q86,56 80,56 Q74,56 74,50 Z"
+        android:alpha="0.9" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M84,54 L92,62 Q94,64 92,66 Q90,68 88,66 L80,58 Z"
+        android:alpha="0.9" />
 </vector>

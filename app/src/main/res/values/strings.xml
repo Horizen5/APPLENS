@@ -8,6 +8,7 @@
     <string name="menu_apps">应用</string>
     <string name="menu_hooks">Hook 管理</string>
     <string name="menu_about">关于</string>
+    <string name="menu_settings">设置</string>
 
     <string name="action_scan">开始扫描</string>
     <string name="action_select_app">选择应用</string>
@@ -21,6 +22,8 @@
     <string name="status_usage_no">使用情况访问：未授权</string>
     <string name="status_overlay_ok">悬浮窗权限：已授权</string>
     <string name="status_overlay_no">悬浮窗权限：未授权</string>
+    <string name="status_all_ok">所有权限正常</string>
+    <string name="status_partial">部分权限缺失，请授予</string>
 
     <!-- 应用列表 -->
     <string name="hint_search_app">搜索应用名 / 包名</string>

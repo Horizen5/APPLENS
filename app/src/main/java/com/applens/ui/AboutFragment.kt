@@ -1,27 +1,40 @@
 package com.applens.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.applens.databinding.FragmentHomeBinding
+import com.applens.databinding.FragmentAboutBinding
 
 class AboutFragment : Fragment() {
+
+    private var _binding: FragmentAboutBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // 复用首页布局但只显示声明部分，或者简单返回一个 TextView
-        val tv = android.widget.TextView(requireContext()).apply {
-            text = "APPLENS\n\nActivity 分析工具\n\n版本 1.0.5\n\n本工具仅供学习研究使用"
-            textSize = 16f
-            setTextColor(android.graphics.Color.parseColor("#666666"))
-            gravity = android.view.Gravity.CENTER
-            setPadding(48, 48, 48, 48)
+        _binding = FragmentAboutBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.itemGithub.setOnClickListener {
+            val url = "https://github.com/Horizen5/APPLENS"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
         }
-        return tv
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
