@@ -20,6 +20,7 @@ class SettingsFragment : Fragment() {
     companion object {
         const val PREFS_NAME = "app_settings"
         const val KEY_ANIM_SPEED = "anim_speed"
+        const val KEY_FOLLOW_SYSTEM = "follow_system"
     }
 
     private lateinit var prefs: SharedPreferences
@@ -40,14 +41,11 @@ class SettingsFragment : Fragment() {
         // 版本号
         binding.tvVersion.text = getString(R.string.about_version, BuildConfig.VERSION_NAME)
 
-        // 跟随系统
-        binding.itemFollowSystem.setOnClickListener {
-            // 切换跟随系统状态
-            val current = prefs.getBoolean("follow_system", true)
-            prefs.edit().putBoolean("follow_system", !current).apply()
-            updateFollowSystemText()
+        // 跟随系统 Switch
+        binding.switchFollowSystem.isChecked = prefs.getBoolean(KEY_FOLLOW_SYSTEM, true)
+        binding.switchFollowSystem.setOnCheckedChangeListener { _, isChecked ->
+            prefs.edit().putBoolean(KEY_FOLLOW_SYSTEM, isChecked).apply()
         }
-        updateFollowSystemText()
 
         // 关于
         binding.itemAbout.setOnClickListener {
@@ -83,18 +81,6 @@ class SettingsFragment : Fragment() {
 
     private fun updateSpeedText(speed: Float) {
         binding.tvSpeedValue.text = String.format("%.2fx", speed)
-    }
-
-    private fun updateFollowSystemText() {
-        val enabled = prefs.getBoolean("follow_system", true)
-        binding.tvFollowSystemValue.text = if (enabled) "已开启" else "已关闭"
-        binding.tvFollowSystemValue.setTextColor(
-            if (enabled) {
-                android.graphics.Color.parseColor("#5B8CFF")
-            } else {
-                android.graphics.Color.parseColor("#999999")
-            }
-        )
     }
 
     override fun onDestroyView() {

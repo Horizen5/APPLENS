@@ -2,8 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lsp_bg"
-    android:fillViewport="true">
+    android:background="@color/lsp_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +33,6 @@
         <!-- 跟随系统 -->
         <LinearLayout
             android:id="@+id/item_follow_system"
-            style="@style/LspListItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -42,7 +40,11 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_list_card"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -62,14 +64,12 @@
                     android:textColor="@color/lsp_text_secondary"
                     android:textSize="14sp" />
             </LinearLayout>
-            <TextView
-                android:id="@+id/tv_follow_system_value"
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_follow_system"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="已开启"
-                android:textColor="@color/hyper_accent"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:thumbTint="@android:color/white"
+                android:trackTint="@color/switch_track_color" />
         </LinearLayout>
 
         <!-- 分组：动画 -->
@@ -124,8 +124,7 @@
                 android:max="200"
                 android:progress="100"
                 android:progressTint="@color/hyper_accent"
-                android:thumbTint="@color/hyper_accent"
-                android:thumbOffset="0dp" />
+                android:thumbTint="@color/hyper_accent" />
 
             <TextView
                 android:id="@+id/tv_speed_value"
@@ -137,13 +136,7 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
-        <!-- 关于区域：固定在底部，用 weight spacer 推到底 -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:minHeight="0dp" />
-
+        <!-- 分组：关于 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -155,16 +148,19 @@
 
         <LinearLayout
             android:id="@+id/item_about"
-            style="@style/LspListItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="96dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/bg_list_card"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
