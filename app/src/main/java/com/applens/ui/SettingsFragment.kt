@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.applens.BuildConfig
 import com.applens.R
@@ -39,38 +37,23 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-        // 设置版本号
+        // 版本号
         binding.tvVersion.text = getString(R.string.about_version, BuildConfig.VERSION_NAME)
 
-        val colorStyles = arrayOf("经典蓝", "活力紫", "青春绿")
-        val themeModes = arrayOf("浅色", "深色", "跟随系统")
-
-        binding.itemColorStyle.setOnClickListener {
-            AlertDialog.Builder(requireContext())
-                .setTitle("选择色彩风格")
-                .setItems(colorStyles) { _, which ->
-                    binding.tvColorStyleValue.text = colorStyles[which]
-                    Toast.makeText(requireContext(), "已切换为：${colorStyles[which]}", Toast.LENGTH_SHORT).show()
-                }
-                .show()
+        // 跟随系统
+        binding.itemFollowSystem.setOnClickListener {
+            // 切换跟随系统状态
+            val current = prefs.getBoolean("follow_system", true)
+            prefs.edit().putBoolean("follow_system", !current).apply()
+            updateFollowSystemText()
         }
+        updateFollowSystemText()
 
-        binding.itemTheme.setOnClickListener {
-            AlertDialog.Builder(requireContext())
-                .setTitle("选择主题模式")
-                .setItems(themeModes) { _, which ->
-                    binding.tvThemeModeValue.text = themeModes[which]
-                    Toast.makeText(requireContext(), "已切换为：${themeModes[which]}", Toast.LENGTH_SHORT).show()
-                }
-                .show()
-        }
-
+        // 关于
         binding.itemAbout.setOnClickListener {
             val aboutFragment = AboutFragment()
             parentFragmentManager.beginTransaction()
                 .setCustomAnimations(
-                    android.R.anim.fade_in,
-                    android.R.anim.fade_out,
                     android.R.anim.fade_in,
                     android.R.anim.fade_out
                 )
@@ -83,21 +66,35 @@ class SettingsFragment : Fragment() {
         val savedSpeed = prefs.getFloat(KEY_ANIM_SPEED, 1.0f)
         val progress = (savedSpeed * 100).toInt()
         binding.seekSpeed.progress = progress
-        binding.tvSpeedValue.text = String.format("%.2fx", savedSpeed)
+        updateSpeedText(savedSpeed)
 
         binding.seekSpeed.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 val speed = progress / 100f
-                binding.tvSpeedValue.text = String.format("%.2fx", speed)
+                updateSpeedText(speed)
             }
-
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
                 val speed = seekBar?.progress?.div(100f) ?: 1.0f
                 prefs.edit().putFloat(KEY_ANIM_SPEED, speed).apply()
             }
         })
+    }
+
+    private fun updateSpeedText(speed: Float) {
+        binding.tvSpeedValue.text = String.format("%.2fx", speed)
+    }
+
+    private fun updateFollowSystemText() {
+        val enabled = prefs.getBoolean("follow_system", true)
+        binding.tvFollowSystemValue.text = if (enabled) "已开启" else "已关闭"
+        binding.tvFollowSystemValue.setTextColor(
+            if (enabled) {
+                android.graphics.Color.parseColor("#5B8CFF")
+            } else {
+                android.graphics.Color.parseColor("#999999")
+            }
+        )
     }
 
     override fun onDestroyView() {

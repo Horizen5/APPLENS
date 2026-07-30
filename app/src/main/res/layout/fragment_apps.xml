@@ -42,11 +42,18 @@
             app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_user"
+                android:id="@+id/chip_all"
                 style="@style/HyperChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
+                android:text="@string/filter_all_apps" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_user"
+                style="@style/HyperChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/filter_user_apps" />
 
             <com.google.android.material.chip.Chip
@@ -55,13 +62,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/filter_system_apps" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_all"
-                style="@style/HyperChip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/filter_all_apps" />
         </com.google.android.material.chip.ChipGroup>
     </LinearLayout>
 

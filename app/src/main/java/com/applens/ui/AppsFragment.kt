@@ -24,8 +24,16 @@ class AppsFragment : Fragment() {
     private var _binding: FragmentAppsBinding? = null
     private val binding get() = _binding!!
     private val adapter = AppListAdapter { selected -> onAppClick(selected) }
+
+    companion object {
+        // 静态缓存：只加载一次，后续打开复用
+        private var cachedApps: List<AppInfo>? = null
+        private var cachedAt: Long = 0
+        private const val CACHE_TTL_MS = 5 * 60 * 1000L // 5 分钟
+    }
+
     private var allApps: List<AppInfo> = emptyList()
-    private var filterMode = FilterMode.USER
+    private var filterMode = FilterMode.ALL
 
     enum class FilterMode { USER, SYSTEM, ALL }
 
@@ -44,13 +52,17 @@ class AppsFragment : Fragment() {
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
 
-        binding.swipe.setOnRefreshListener { loadApps() }
+        binding.swipe.setOnRefreshListener {
+            cachedApps = null // 手动刷新时清除缓存
+            loadApps()
+        }
+
         binding.chipGroup.setOnCheckedStateChangeListener { group, _ ->
             filterMode = when (group.checkedChipId) {
                 R.id.chip_user -> FilterMode.USER
                 R.id.chip_system -> FilterMode.SYSTEM
                 R.id.chip_all -> FilterMode.ALL
-                else -> FilterMode.USER
+                else -> FilterMode.ALL
             }
             applyFilter()
         }
@@ -65,12 +77,23 @@ class AppsFragment : Fragment() {
     }
 
     private fun loadApps() {
+        val now = System.currentTimeMillis()
+        cachedApps?.let { cached ->
+            if (now - cachedAt < CACHE_TTL_MS) {
+                allApps = cached
+                applyFilter()
+                return
+            }
+        }
+
         binding.swipe.isRefreshing = true
         lifecycleScope.launch {
             val list = withContext(Dispatchers.IO) {
                 AppRepository.listAll(requireContext().packageManager)
             }
             allApps = list
+            cachedApps = list
+            cachedAt = System.currentTimeMillis()
             binding.swipe.isRefreshing = false
             applyFilter()
         }

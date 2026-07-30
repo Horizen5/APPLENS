@@ -4,8 +4,7 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
-    <!-- 应用图标：九宫格 -->
     <path
-        android:fillColor="#333333"
-        android:pathData="M4,4h7v7H4V4zm2,2v3h3V6H6zm5,-2h7v7h-7V4zm2,2v3h3V6h-3zM4,13h7v7H4v-7zm2,2v3h3v-3H6zm5,-2h7v7h-7v-7zm2,2v3h3v-3h-3z" />
+        android:fillColor="@android:color/black"
+        android:pathData="M4,4h7v7H4zM13,4h7v7h-7zM4,13h7v7H4zM13,13h7v7h-7z"/>
 </vector>

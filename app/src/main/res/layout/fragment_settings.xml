@@ -2,13 +2,13 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lsp_bg">
+    android:background="@color/lsp_bg"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="80dp">
+        android:orientation="vertical">
 
         <!-- 大标题 -->
         <TextView
@@ -21,19 +21,19 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <!-- 分组：主题 -->
+        <!-- 分组：显示 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="24dp"
-            android:text="主题"
+            android:text="显示"
             android:textColor="@color/lsp_text_secondary"
             android:textSize="13sp" />
 
-        <!-- 色彩风格 -->
+        <!-- 跟随系统 -->
         <LinearLayout
-            android:id="@+id/item_color_style"
+            android:id="@+id/item_follow_system"
             style="@style/LspListItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,67 +51,99 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="色彩风格"
+                    android:text="跟随系统"
                     android:textColor="@color/lsp_text_primary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="经典蓝 / 活力紫 / 青春绿"
+                    android:text="色彩与主题跟随系统设置"
                     android:textColor="@color/lsp_text_secondary"
                     android:textSize="14sp" />
             </LinearLayout>
             <TextView
-                android:id="@+id/tv_color_style_value"
+                android:id="@+id/tv_follow_system_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="经典蓝"
-                android:textColor="@color/lsp_text_secondary"
-                android:textSize="14sp" />
+                android:text="已开启"
+                android:textColor="@color/hyper_accent"
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- 主题模式 -->
+        <!-- 分组：动画 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:text="动画"
+            android:textColor="@color/lsp_text_secondary"
+            android:textSize="13sp" />
+
+        <!-- 动画速度卡片 -->
         <LinearLayout
-            android:id="@+id/item_theme"
-            style="@style/LspListItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_list_card"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="20dp">
+
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_speed" />
+
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="主题模式"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="动画速度"
                     android:textColor="@color/lsp_text_primary"
-                    android:textSize="16sp"
+                    android:textSize="17sp"
                     android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="浅色 / 深色 / 跟随系统"
-                    android:textColor="@color/lsp_text_secondary"
-                    android:textSize="14sp" />
             </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seek_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:max="200"
+                android:progress="100"
+                android:progressTint="@color/hyper_accent"
+                android:thumbTint="@color/hyper_accent"
+                android:thumbOffset="0dp" />
+
             <TextView
-                android:id="@+id/tv_theme_mode_value"
+                android:id="@+id/tv_speed_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="跟随系统"
+                android:layout_marginTop="4dp"
+                android:text="1.00x"
                 android:textColor="@color/lsp_text_secondary"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
         </LinearLayout>
 
-        <!-- 分组：关于 -->
+        <!-- 关于区域：固定在底部，用 weight spacer 推到底 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="0dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -129,6 +161,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="96dp"
             android:background="@drawable/bg_list_card"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -157,101 +190,6 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/lsp_text_tertiary"
                 android:textSize="14sp" />
-        </LinearLayout>
-
-        <!-- 分组：动画 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="24dp"
-            android:text="动画"
-            android:textColor="@color/lsp_text_secondary"
-            android:textSize="13sp" />
-
-        <!-- 动画速度调节 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_list_card"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="动画速度"
-                    android:textColor="@color/lsp_text_primary"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_speed_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.0x"
-                    android:textColor="@color/hyper_accent"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="调节界面动画的播放速度"
-                android:textColor="@color/lsp_text_secondary"
-                android:textSize="13sp" />
-
-            <SeekBar
-                android:id="@+id/seek_speed"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:max="200"
-                android:progress="100"
-                android:progressTint="@color/hyper_accent"
-                android:thumbTint="@color/hyper_accent" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="0.25x"
-                    android:textColor="@color/lsp_text_tertiary"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.0x"
-                    android:textColor="@color/lsp_text_tertiary"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="2.0x"
-                    android:textColor="@color/lsp_text_tertiary"
-                    android:textSize="12sp" />
-            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
