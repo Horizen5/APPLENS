@@ -21,16 +21,57 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <!-- 分组：通用 -->
+        <!-- 分组：主题 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="24dp"
-            android:text="通用"
+            android:text="主题"
             android:textColor="@color/lsp_text_secondary"
             android:textSize="13sp" />
 
+        <!-- 色彩风格 -->
+        <LinearLayout
+            android:id="@+id/item_color_style"
+            style="@style/LspListItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_list_card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="色彩风格"
+                    android:textColor="@color/lsp_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="经典蓝 / 活力紫 / 青春绿"
+                    android:textColor="@color/lsp_text_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_color_style_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经典蓝"
+                android:textColor="@color/lsp_text_secondary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 主题模式 -->
         <LinearLayout
             android:id="@+id/item_theme"
             style="@style/LspListItem"
@@ -61,11 +102,13 @@
                     android:textColor="@color/lsp_text_secondary"
                     android:textSize="14sp" />
             </LinearLayout>
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_arrow_right"
-                android:contentDescription="@null" />
+            <TextView
+                android:id="@+id/tv_theme_mode_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跟随系统"
+                android:textColor="@color/lsp_text_secondary"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <!-- 分组：关于 -->
@@ -108,11 +151,12 @@
                     android:textColor="@color/lsp_text_secondary"
                     android:textSize="14sp" />
             </LinearLayout>
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_arrow_right"
-                android:contentDescription="@null" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_version"
+                android:textColor="@color/lsp_text_tertiary"
+                android:textSize="14sp" />
         </LinearLayout>
 
     </LinearLayout>

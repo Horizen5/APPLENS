@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="版本 1.0.6"
+                android:text="版本 1.0.7"
                 android:textColor="@color/lsp_text_secondary"
                 android:textSize="14sp" />
 
@@ -99,11 +99,6 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_arrow_right"
-                android:contentDescription="@null" />
         </LinearLayout>
 
     </LinearLayout>
