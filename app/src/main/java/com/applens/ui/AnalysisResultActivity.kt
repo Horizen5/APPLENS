@@ -146,7 +146,7 @@ class AnalysisResultActivity : AppCompatActivity() {
                     action == HookRule.Action.BLOCK
                 ) {
                     Thread {
-                        val r = HookExecutor.apply(rule)
+                        val r = HookExecutor.apply(this@AnalysisResultActivity, rule)
                         runOnUiThread {
                             AlertDialog.Builder(this)
                                 .setTitle("执行结果")

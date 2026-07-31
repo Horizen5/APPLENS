@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioGroup
 import android.widget.SeekBar
 import androidx.fragment.app.Fragment
 import com.applens.BuildConfig
 import com.applens.R
+import com.applens.core.ControllerManager
+import com.applens.core.ControllerType
 import com.applens.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
@@ -47,6 +50,9 @@ class SettingsFragment : Fragment() {
             prefs.edit().putBoolean(KEY_FOLLOW_SYSTEM, isChecked).apply()
         }
 
+        // 控制器模式选择
+        setupControllerType()
+
         // 关于
         binding.itemAbout.setOnClickListener {
             val aboutFragment = AboutFragment()
@@ -77,6 +83,34 @@ class SettingsFragment : Fragment() {
                 prefs.edit().putFloat(KEY_ANIM_SPEED, speed).apply()
             }
         })
+    }
+
+    private fun setupControllerType() {
+        val currentType = ControllerManager.getControllerType(requireContext())
+
+        // 设置当前选中项
+        when (currentType) {
+            ControllerType.PM -> binding.rbPm.isChecked = true
+            ControllerType.IFW -> binding.rbIfw.isChecked = true
+            ControllerType.IFW_PLUS_PM -> binding.rbIfwPm.isChecked = true
+        }
+        updateControllerDesc(currentType)
+
+        // 监听切换
+        binding.rgController.setOnCheckedChangeListener { _, checkedId ->
+            val newType = when (checkedId) {
+                R.id.rb_pm -> ControllerType.PM
+                R.id.rb_ifw -> ControllerType.IFW
+                R.id.rb_ifw_pm -> ControllerType.IFW_PLUS_PM
+                else -> ControllerType.PM
+            }
+            ControllerManager.setControllerType(requireContext(), newType)
+            updateControllerDesc(newType)
+        }
+    }
+
+    private fun updateControllerDesc(type: ControllerType) {
+        binding.tvControllerDesc.text = type.description
     }
 
     private fun updateSpeedText(speed: Float) {

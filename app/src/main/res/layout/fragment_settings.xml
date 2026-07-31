@@ -136,6 +136,101 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
+        <!-- 分组：控制模式 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:text="控制模式"
+            android:textColor="@color/lsp_text_secondary"
+            android:textSize="13sp" />
+
+        <!-- 控制器模式选择卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_list_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_shield" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="组件控制方式"
+                    android:textColor="@color/lsp_text_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_controller_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="直接禁用组件，效果确定，但应用可检测到禁用状态"
+                android:textColor="@color/lsp_text_secondary"
+                android:textSize="13sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_controller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb_pm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="PM 模式"
+                    android:textColor="@color/lsp_text_primary"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_ifw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="IFW 模式（防火墙拦截，隐蔽性强）"
+                    android:textColor="@color/lsp_text_primary"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_ifw_pm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="IFW+PM 模式（双层屏蔽，推荐）"
+                    android:textColor="@color/lsp_text_primary"
+                    android:textSize="15sp" />
+            </RadioGroup>
+        </LinearLayout>
+
         <!-- 分组：关于 -->
         <TextView
             android:layout_width="wrap_content"

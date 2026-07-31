@@ -54,7 +54,7 @@ class HookManagerActivity : AppCompatActivity() {
 
     private fun execRule(rule: HookRule, isRevert: Boolean) {
         Thread {
-            val r = if (isRevert) HookExecutor.revert(rule) else HookExecutor.apply(rule)
+            val r = if (isRevert) HookExecutor.revert(this, rule) else HookExecutor.apply(this, rule)
             runOnUiThread {
                 AlertDialog.Builder(this)
                     .setTitle(if (isRevert) "撤销结果" else "执行结果")
